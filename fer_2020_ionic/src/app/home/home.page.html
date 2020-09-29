@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Application de reconnaissance d'émotions faciales
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="title">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <strong>
+          <ion-title size="large">Application de reconnaissance d'émotions faciales</ion-title>
+        </strong>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <div id="container">
+    <p>
+      Notre application permet de reconnaître une émotion sur un visage à partir d'une
+      photographie déjà existante ou de l'appareil photo de votre téléphone.
+    </p>
+  </div>
+</ion-content>
+<div id="buttons">
+  <ion-button expand="block">
+    Prendre une photo déja existante dans votre appareil
+  </ion-button>
+  <ion-button expand="block">
+    Prendre une photo avec votre appareil photo
+  </ion-button>
+</div>
+<div id="tabs">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="grid-outline"></ion-icon>
+        <ion-label>Menu</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="photo">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Photo</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>
