@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Camera } from '@ionic-native/camera/ngx';
 import { AlertController } from '@ionic/angular';
+import { HTTP } from '@ionic-native/http/ngx';
+
 
 
 @Component({
@@ -11,8 +13,22 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
   imgURL;
 
-  constructor(private camera: Camera, public alertController: AlertController) {
+  constructor(private camera: Camera, public alertController: AlertController, private http: HTTP) {
 
+  }
+
+  async getData() {
+    this.http.get('https://reqres.in/api/users/2', {}, {})
+      .then(data => {
+        this.showAlert(data.data)
+      })
+      .catch(error => {
+
+        this.showAlert(error.status);
+        this.showAlert(error.error); // error message as string
+        this.showAlert(error.headers);
+
+      });
   }
   async showAlert(msg) {
     await this.alertController.create({
