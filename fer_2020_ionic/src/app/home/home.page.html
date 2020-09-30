@@ -13,14 +13,17 @@
     </p>
   </div>
   <div id="img">
-    <img src="{{imgURL}}" height="300" width="300" />
+    <img src="{{imgURL}}" height="350" width="300" />
   </div>
   <div id="buttons">
     <ion-button (click)="getGallery()" expand="block">
-      Sélectionner une photo déja existante dans votre appareil
+      Sélectionner une photo dans votre gallerie
     </ion-button>
     <ion-button (click)="getPhoto()" expand="block">
       Prendre une photo avec votre appareil photo
+    </ion-button>
+    <ion-button (click)="sendData()" expand="block" color="success">
+      Analyser votre émotion
     </ion-button>
   </div>
 </ion-content>
