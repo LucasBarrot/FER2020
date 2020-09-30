@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Camera } from '@ionic-native/camera/ngx';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +9,34 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  imgURL;
 
-  constructor() {}
+  constructor(private camera: Camera, public alertController: AlertController) {
 
+  }
+  async showAlert(msg) {
+    await this.alertController.create({
+      header: msg
+    }).then(res => res.present());
+  }
+  getPhoto() {
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      destinationType: this.camera.DestinationType.FILE_URI
+    }).then((res) => {
+      this.imgURL = res;
+    }).catch(e => {
+      this.showAlert(e);
+    })
+  }
+  getGallery() {
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.FILE_URI
+    }).then((res) => {
+      this.imgURL = res;
+    }).catch(e => {
+      this.showAlert(e);
+    })
+  }
 }

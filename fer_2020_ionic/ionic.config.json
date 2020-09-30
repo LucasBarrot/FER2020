@@ -1,5 +1,7 @@
 {
-  "name": "fer_2020",
-  "integrations": {},
+  "name": "FER_2020_ionic",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
