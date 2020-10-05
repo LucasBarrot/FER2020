@@ -1,2 +1,8 @@
-Flask==1.1.1
-flask_restful==0.3.8
+flask
+flask_restful
+werkzeug
+gunicorn
+numpy==1.18.5
+requests
+keras.models
+tensorflow

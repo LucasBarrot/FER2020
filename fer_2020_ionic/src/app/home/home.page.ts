@@ -17,11 +17,12 @@ export class HomePage {
 
   }
 
-  async getData() {
-    this.http.get('https://reqres.in/api/users/2', {}, {})
-      .then(data => {
-        this.showAlert(data.data)
-      })
+  async getData(img) {
+    this.http.post('https://reqres.in/api/users', {
+      "img": img,
+      "email": "customer004@email.com",
+      "tel": "0000252525"
+    }, {})
       .catch(error => {
 
         this.showAlert(error.status);
