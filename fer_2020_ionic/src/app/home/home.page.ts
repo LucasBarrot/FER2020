@@ -18,10 +18,10 @@ export class HomePage {
 
   }
   async postData() {
-    // const formData = {
-    //   imgURL
-    // };
-    this.http.post("https://fer-2020-project.herokuapp.com/", this.imgURL, {})
+    const formData = {
+      'img': this.imgURL
+    };
+    this.http.post("https://fer-2020-project.herokuapp.com/", formData, {})
       .then(data => {
         this.showAlert(data.data);
       })
