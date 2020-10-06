@@ -9,20 +9,20 @@
   <div id="container">
     <p>
       Notre application permet de reconnaître une émotion sur un visage à partir d'une
-      photographie déjà existante ou de l'appareil photo de votre téléphone.
+      photographie déjà existante ou de l'appareil photo de votre téléphone. {{data}}
     </p>
   </div>
   <div id="img">
     <img src="{{imgURL}}" height="350" width="300" />
   </div>
   <div id="buttons">
-    <ion-button (click)="getGallery()" expand="block">
+    <ion-button (click)="addPhoto('library')" expand="block">
       Sélectionner une photo dans votre gallerie
     </ion-button>
-    <ion-button (click)="getPhoto()" expand="block">
+    <ion-button (click)="addPhoto('camera')" expand="block">
       Prendre une photo avec votre appareil photo
     </ion-button>
-    <ion-button (click)="getData(imgURL)" expand="block" color="success">
+    <ion-button (click)="postData()" expand="block" color="success">
       Analyser votre émotion
     </ion-button>
   </div>
