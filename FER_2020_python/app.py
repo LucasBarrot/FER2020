@@ -1,4 +1,3 @@
-import tensorflow as tf
 from flask import Flask, request
 from flask_restful import reqparse, abort, Api, Resource
 import numpy as np
@@ -43,7 +42,7 @@ class PredictSentiment(Resource):
         loaded_model = model_from_json(loaded_model_json)
         # load weights into new model
         loaded_model.load_weights("fer.h5")
-        print("Loaded model from disk")
+        print("Loaded model")
         
         #with tf.device('/CPU:0'):
         predict = loaded_model.predict_classes((image))
@@ -74,6 +73,9 @@ api.add_resource(PredictSentiment, '/')
 
 if __name__ == '__main__':
     app.run(debug=False)
+    
+    
+    
     
     
     
